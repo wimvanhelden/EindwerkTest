@@ -1,15 +1,14 @@
 from flask import render_template, request, flash, jsonify
 from flask_login import login_required, current_user
-from model_event import Event
-from . import db
+from .model_event import Event
 import json
 from datetime import datetime
 from flask import render_template, request, flash, jsonify, redirect, url_for
 from flask_login import login_required, current_user
 from event_app.bp_home.consts import *
-from . import db
+from .. import db
 import json
-import bp_events
+from .views_event import bp_events
 
 @bp_events.route('/add-events', methods=['GET', 'POST'])
 @login_required

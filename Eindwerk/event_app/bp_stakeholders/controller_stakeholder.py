@@ -1,15 +1,15 @@
 from flask import render_template, request, flash, jsonify
 from flask_login import login_required, current_user
 from model_stakeholder import Stakeholder
-from . import db
+from .. import db
 import json
 from datetime import datetime
 from flask import render_template, request, flash, jsonify, redirect, url_for
 from flask_login import login_required, current_user
-from event_app.bp_home.consts import *
-from . import db
+from ..bp_home.consts import *
+
 import json
-import bp_stakeholders
+from views_stakeholder import bp_stakeholders
 
 
 

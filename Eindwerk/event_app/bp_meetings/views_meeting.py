@@ -3,9 +3,11 @@ from flask_login import login_required, current_user
 from datetime import datetime
 from flask import render_template
 from flask_login import login_required, current_user 
-from event_app.bp_home.consts import *
-from model_meeting import Meeting
-import bp_meetings
+from ..bp_home.consts import *
+from .model_meeting import Meeting
+from flask import Blueprint
+
+bp_meetings = Blueprint('bp_meetings', __name__)
 
 @bp_meetings.route('/meeting-list', methods=['GET'])
 @login_required

@@ -1,18 +1,21 @@
-from flask import render_template
+from flask import render_template, Blueprint
 from flask_login import login_required
-from bp_events.model_event import Event
-from bp_meetings.model_meeting import Meeting
-from bp_tasks.model_task import Task
+from ..bp_events.model_event import Event
+from ..bp_meetings.model_meeting import Meeting
+from ..bp_tasks.model_task import Task
 from datetime import datetime
 from flask import render_template
 from flask_login import login_required
 from datetime import datetime
-from event_app.bp_home.consts import *
-import bp_home
+from ..bp_home.consts import *
+
+
+bp_home = Blueprint('bp_home', __name__)
 
 @bp_home.route('/')
 @login_required
 def do_home():
+    print("hallo!!!!")
     # get the current date and time
     current_datetime = datetime.now()
 

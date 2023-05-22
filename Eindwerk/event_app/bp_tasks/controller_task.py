@@ -1,16 +1,15 @@
 from flask import render_template, request, flash, jsonify
 from flask_login import login_required, current_user
-from . import db
+from .. import db
 import json
 from datetime import datetime
 from flask import render_template, request, flash, jsonify, redirect, url_for
 from flask_login import login_required, current_user
 from datetime import datetime 
-from event_app.bp_home.consts import *
-from model_task import Task
-from . import db
+from ..bp_home.consts import *
+from .model_task import Task
 import json
-import bp_tasks
+from .views_task import bp_tasks
 
 
 @bp_tasks.route('/add-task', methods=['GET', 'POST'])

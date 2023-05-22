@@ -1,10 +1,11 @@
-from . import db
+from .. import db
 from datetime import datetime
 from flask_login import UserMixin
 from sqlalchemy.sql import func
 
 
 class Stakeholder(db.Model):
+    __table_args__ = {'extend_existing': True}
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50))
     email = db.Column(db.String(150))

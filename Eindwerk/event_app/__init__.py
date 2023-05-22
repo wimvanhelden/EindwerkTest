@@ -4,7 +4,7 @@ from os import path
 from flask_login import LoginManager
 
 db = SQLAlchemy()
-DB_NAME = "database.db"
+DB_NAME = "database.db" 
 
 
 def create_app():
@@ -31,13 +31,13 @@ def create_app():
 
 
 def register_blueprint(app):
-    from .bp_home import bp_home
-    from .bp_events import bp_events
+    from .bp_home.views_general import bp_home
+    from .bp_events.views_event import bp_events
     from .auth import auth
-    from .bp_meetings import bp_meetings
-    from .bp_stakeholders import bp_stakeholders
-    from .bp_calendar import bp_calendar
-    from .bp_tasks import bp_tasks
+    from .bp_meetings.views_meeting import bp_meetings
+    from .bp_stakeholders.views_stakeholder import bp_stakeholders
+    from .bp_calendar.views_calendar import bp_calendar
+    from .bp_tasks.views_task import bp_tasks
     
     app.register_blueprint(bp_home, url_prefix='/')
     app.register_blueprint(bp_events, url_prefix='/')

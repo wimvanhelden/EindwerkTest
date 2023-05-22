@@ -2,9 +2,11 @@ from flask import render_template
 from flask_login import login_required, current_user
 from flask import render_template
 from flask_login import login_required, current_user 
-from event_app.bp_home.consts import *
-from model_stakeholder import Stakeholder
-import bp_stakeholders
+from ..bp_home.consts import *
+from .model_stakeholder import Stakeholder
+from flask import Blueprint
+
+bp_stakeholders = Blueprint('bp_stakeholders', __name__)
 
 @bp_stakeholders.route("/stakeholder-list", methods=['GET'])
 @login_required
